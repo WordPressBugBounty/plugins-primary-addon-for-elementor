@@ -3,10 +3,10 @@ Contributors: nicheaddons, freemius
 Author URI: https://nicheaddons.com/
 Plugin URI: https://nicheaddons.com/demos/primary/
 Tags: primary, addon, elementor, unlimited, essential
-Requires PHP: 7.0
+Requires PHP: 7.4
 Requires at least: 6.0
-Tested up to: 6.6.2
-Stable tag: 1.6.0
+Tested up to: 6.7
+Stable tag: 1.6.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,6 +126,12 @@ No, it'll not work without Elementor Page Builder, it's an addon for Elementor.
 7. Form Widget - PRO
 
 == Changelog ==
+
+= 1.6.2
+* JS issue fix
+
+= 1.6.1
+* Security Fixes and Improvements
 
 = 1.6.0
 * Freemius SDK Updated

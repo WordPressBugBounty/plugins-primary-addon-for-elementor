@@ -256,6 +256,62 @@ $( window ).on( 'elementor/frontend/init', function() {
 	} );
 
 	
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/prim_basic_image_compare.default', function($scope, $) {
+		let target_el   = $scope.find(".napae-compare");
+        let beforeUrl = target_el.data('before-url');
+        let beforeTitle = target_el.data('before-title');
+        let afterUrl = target_el.data('after-url');
+        let afterTitle = target_el.data('after-title');
+        let showLabels = target_el.data('show-labels');
+        let startingPosition = target_el.data('starting-position');
+        let compareStyle = target_el.data('compare-style');
+
+        new juxtapose.JXSlider(target_el[0], [
+            {
+                src: beforeUrl,
+                label: beforeTitle
+            },
+            {
+                src: afterUrl,
+                label: afterTitle
+            }
+        ], {
+            animate: true,
+            showLabels: showLabels,
+            showCredits: false,
+            startingPosition: startingPosition + "%",
+            makeResponsive: true,
+            mode: compareStyle
+        });
+	} );
 	
+	//Chart
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/prim_basic_chart.default', function($scope, $){
+	    //Chart Script
+	    let $canvas = $scope.find(".naeep-chart canvas");
+        let chartData = $canvas.data('chart');
+
+        if (chartData) {
+            // Global configs
+            Chart.defaults.global.responsive = true;
+            Chart.defaults.global.maintainAspectRatio = false;
+            Chart.defaults.global.tooltips.backgroundColor = 'rgba(35,35,35,0.9)';
+            Chart.defaults.global.tooltips.bodyFontSize = 13;
+            Chart.defaults.global.tooltips.bodyFontStyle = 'bold';
+            Chart.defaults.global.tooltips.yPadding = 13;
+            Chart.defaults.global.tooltips.xPadding = 10;
+            Chart.defaults.doughnut.cutoutPercentage = 60;
+
+            // Create the chart
+            new Chart($canvas, {
+                type: chartData.type,
+                data: {
+                    labels: chartData.labels,
+                    datasets: chartData.datasets
+                },
+                options: chartData.options
+            });
+        } 
+	} );
 } );
 })(jQuery);

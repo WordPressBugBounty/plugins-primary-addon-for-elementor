@@ -1342,26 +1342,26 @@ class Primary_Addon_Blog extends Widget_Base{
 			$pageDots = !empty( $settings['pageDots'] ) ? $settings['pageDots'] : '';
 
 		// Carousel Data's
-			$draggable = $draggable ? ' data-draggable="true"' : ' data-draggable="false"';
-			$freeScroll = $freeScroll ? ' data-freescroll="true"' : '';
-			$freeScrollFriction = $freeScrollFriction ? ' data-freescrollfriction="'.$freeScrollFriction.'"' : '';
-			$wrapAround = $wrapAround ? ' data-wraparound="true"' : ' data-wraparound="false"';
-			$groupCells = $groupCells ? ' data-groupcells="'.$groupCells.'"' : '';
-			$autoPlay = $autoPlay ? ' data-autoplay="'.$autoPlay.'"' : '';
-			$pauseAutoPlayOnHover = $pauseAutoPlayOnHover ? ' data-pauseautoplayonhover="true"' : '';
-			$adaptiveHeight = $adaptiveHeight ? ' data-adaptiveheight="true"' : '';
-			$dragThreshold = $dragThreshold ? ' data-dragthreshold="'.$dragThreshold.'"' : '';
-			$selectedAttraction = $selectedAttraction ? ' data-selectedattraction="'.$selectedAttraction.'"' : '';
-			$friction = $friction ? ' data-friction="'.$friction : '';
-			$initialIndex = $initialIndex ? ' data-initialindex="'.$initialIndex.'"' : '';
-			$accessibility = $accessibility ? ' data-accessibility="true"' : ' data-accessibility="false"';
-			$setGallerySize = $setGallerySize ? ' data-setgallerysize="true"' : ' data-setgallerysize="false"';
-			$resize = $resize ? ' data-resize="true"' : ' data-resize="false"';
-			$cellAlign = $cellAlign ? ' data-cellalign="'.$cellAlign.'"' : '';
-			$contain = $contain ? ' data-contain="true"' : '';
-			$rightToLeft = $rightToLeft ? ' data-righttoleft="true"' : '';
-			$prevNextButtons = $prevNextButtons ? ' data-prevnextbuttons="true"' : ' data-prevnextbuttons="false"';
-			$pageDots = $pageDots ? ' data-pagedots="true"' : ' data-pagedots="false"';
+			$draggable = $draggable ? ' data-draggable="' . esc_attr('true') . '"' : ' data-draggable="' . esc_attr('false') . '"';
+			$freeScroll = $freeScroll ? ' data-freescroll="' . esc_attr('true') . '"' : '';
+			$freeScrollFriction = $freeScrollFriction ? ' data-freescrollfriction="' . esc_attr($freeScrollFriction) . '"' : '';
+			$wrapAround = $wrapAround ? ' data-wraparound="' . esc_attr('true') . '"' : ' data-wraparound="' . esc_attr('false') . '"';
+			$groupCells = $groupCells ? ' data-groupcells="' . esc_attr($groupCells) . '"' : '';
+			$autoPlay = $autoPlay ? ' data-autoplay="' . esc_attr($autoPlay) . '"' : '';
+			$pauseAutoPlayOnHover = $pauseAutoPlayOnHover ? ' data-pauseautoplayonhover="' . esc_attr('true') . '"' : '';
+			$adaptiveHeight = $adaptiveHeight ? ' data-adaptiveheight="' . esc_attr('true') . '"' : '';
+			$dragThreshold = $dragThreshold ? ' data-dragthreshold="' . esc_attr($dragThreshold) . '"' : '';
+			$selectedAttraction = $selectedAttraction ? ' data-selectedattraction="' . esc_attr($selectedAttraction) . '"' : '';
+			$friction = $friction ? ' data-friction="' . esc_attr($friction) . '"' : '';
+			$initialIndex = $initialIndex ? ' data-initialindex="' . esc_attr($initialIndex) . '"' : '';
+			$accessibility = $accessibility ? ' data-accessibility="' . esc_attr('true') . '"' : ' data-accessibility="' . esc_attr('false') . '"';
+			$setGallerySize = $setGallerySize ? ' data-setgallerysize="' . esc_attr('true') . '"' : ' data-setgallerysize="' . esc_attr('false') . '"';
+			$resize = $resize ? ' data-resize="' . esc_attr('true') . '"' : ' data-resize="' . esc_attr('false') . '"';
+			$cellAlign = $cellAlign ? ' data-cellalign="' . esc_attr($cellAlign) . '"' : '';
+			$contain = $contain ? ' data-contain="' . esc_attr('true') . '"' : '';
+			$rightToLeft = $rightToLeft ? ' data-righttoleft="' . esc_attr('true') . '"' : '';
+			$prevNextButtons = $prevNextButtons ? ' data-prevnextbuttons="' . esc_attr('true') . '"' : ' data-prevnextbuttons="' . esc_attr('false') . '"';
+			$pageDots = $pageDots ? ' data-pagedots="' . esc_attr('true') . '"' : ' data-pagedots="' . esc_attr('false') . '"';
 
 		$blog_col = $blog_col ? $blog_col : '3';
 
@@ -1400,14 +1400,14 @@ class Primary_Addon_Blog extends Widget_Base{
 			  $paged = $my_page;
 			}
 
-    if ($blog_show_id) {
+	    if ($blog_show_id) {
 			$blog_show_id = json_encode( $blog_show_id );
 			$blog_show_id = str_replace(array( '[', ']' ), '', $blog_show_id);
 			$blog_show_id = str_replace(array( '"', '"' ), '', $blog_show_id);
-      $blog_show_id = explode(',',$blog_show_id);
-    } else {
-      $blog_show_id = '';
-    }
+	  		$blog_show_id = explode(',',$blog_show_id);
+	    } else {
+	      	$blog_show_id = '';
+	    }
 
 		$args = array(
 		  // other query params here,
@@ -1417,14 +1417,14 @@ class Primary_Addon_Blog extends Widget_Base{
 		  'category_name' => implode(',', $blog_show_category),
 		  'orderby' => $blog_orderby,
 		  'order' => $blog_order,
-      'post__in' => $blog_show_id,
+      	  'post__in' => $blog_show_id,
 		);
 
 		$prim_post = new \WP_Query( $args );
 		if ($prim_post->have_posts()) : ?>
 		<div class="napae-blog-wrap<?php echo esc_attr($style_class); ?>">
 			<?php if ($blog_style === 'three') { ?>
-			<div class="flick-carousel" <?php echo $cellAlign . $draggable . $freeScroll . $freeScrollFriction . $wrapAround . $groupCells . $autoPlay . $pauseAutoPlayOnHover . $adaptiveHeight . $dragThreshold . $selectedAttraction . $friction . $initialIndex . $accessibility . $setGallerySize . $resize . $contain . $rightToLeft . $prevNextButtons . $pageDots; ?>>
+			<div class="flick-carousel"<?php echo wp_kses_post($cellAlign . $draggable . $freeScroll . $freeScrollFriction . $wrapAround . $groupCells . $autoPlay . $pauseAutoPlayOnHover . $adaptiveHeight . $dragThreshold . $selectedAttraction . $friction . $initialIndex . $accessibility . $setGallerySize . $resize . $contain . $rightToLeft . $prevNextButtons . $pageDots); ?>>
 			<?php } else { ?>
 			<div class="nich-row">
 			<?php } ?>

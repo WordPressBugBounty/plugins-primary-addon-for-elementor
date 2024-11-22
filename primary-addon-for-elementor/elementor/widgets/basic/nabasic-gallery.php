@@ -985,7 +985,7 @@ class Primary_Addon_Gallery extends Widget_Base{
 				$category = $filter_cat ? ' data-category="'. str_replace(', ', " ", strtolower($filter_cat)) .'"' : '';
 				$category_class = $filter_cat ? ' '.str_replace(', ', " ", strtolower($filter_cat)) : '';
 
-			  $output .= '<div class="masonry-item'.$category_class.' '.$gallery_col.'"'.$category.'>
+			  $output .= '<div class="masonry-item'.esc_attr( $category_class ).' '.esc_attr( $gallery_col ).'"'.esc_attr( $category ).'>
 			  							<div class="napae-gallery-item'.$hover_class.$style_class.'">';
 			  							if ($gallery_style === 'two') {$output .= '<div class="gallery-info-wrap">';}
 		  									$output .= $image.'

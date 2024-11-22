@@ -812,7 +812,7 @@ class Primary_Addon_Woo_Grid extends Widget_Base{
 										<div class="napae-woo-product-image" style="background-image: url(<?php echo esc_url($image_url); ?>);">
 											<?php 
 												if($settings['is_label']) { 
-													echo ( ! $product->managing_stock() && ! $product->is_in_stock() ? '<span class="napae-onsale outofstock '.$sale_badge_preset.' '.$sale_badge_align.'">'. $stockout_text .'</span>' : ($product->is_on_sale() ? '<span class="napae-onsale '.$sale_badge_preset.' '.$sale_badge_align.'">' . $sale_text . '</span>' : '') );
+													echo ( ! $product->managing_stock() && ! $product->is_in_stock() ? '<span class="napae-onsale outofstock '.esc_attr( $sale_badge_preset ).' '.esc_attr( $sale_badge_align ).'">'. esc_html( $stockout_text ) .'</span>' : ($product->is_on_sale() ? '<span class="napae-onsale '.esc_attr( $sale_badge_preset ).' '.esc_attr( $sale_badge_align ).'">' . esc_html( $sale_text ) . '</span>' : '') );
 												}
 											?>
 										</div>
@@ -861,7 +861,7 @@ class Primary_Addon_Woo_Grid extends Widget_Base{
 										<div class="napae-woo-product-image" style="background-image: url(<?php echo esc_url($image_url); ?>);">
 											<?php 
 												if($settings['is_label']) { 
-													echo ( ! $product->managing_stock() && ! $product->is_in_stock() ? '<span class="napae-onsale outofstock '.$sale_badge_preset.' '.$sale_badge_align.'">'. $stockout_text .'</span>' : ($product->is_on_sale() ? '<span class="napae-onsale '.$sale_badge_preset.' '.$sale_badge_align.'">' . $sale_text . '</span>' : '') );
+													echo ( ! $product->managing_stock() && ! $product->is_in_stock() ? '<span class="napae-onsale outofstock '.esc_attr( $sale_badge_preset ).' '.esc_attr( $sale_badge_align ).'">'. esc_html( $stockout_text ) .'</span>' : ($product->is_on_sale() ? '<span class="napae-onsale '.esc_attr( $sale_badge_preset ).' '.esc_attr( $sale_badge_align ).'">' . esc_html($sale_text) . '</span>' : '') );
 												}
 											?>
 										</div>
@@ -901,7 +901,7 @@ class Primary_Addon_Woo_Grid extends Widget_Base{
 								<div class="napae-woo-product-image" style="background-image: url(<?php echo esc_url($image_url); ?>);">
 									<?php 
 										if($settings['is_label']) { 
-											echo ( ! $product->managing_stock() && ! $product->is_in_stock() ? '<span class="napae-onsale outofstock '.$sale_badge_preset.' '.$sale_badge_align.'">'. $stockout_text .'</span>' : ($product->is_on_sale() ? '<span class="napae-onsale '.$sale_badge_preset.' '.$sale_badge_align.'">' . $sale_text . '</span>' : '') );
+											echo ( ! $product->managing_stock() && ! $product->is_in_stock() ? '<span class="napae-onsale outofstock '.esc_attr( $sale_badge_preset ).' '.esc_attr( $sale_badge_align ).'">'. esc_html( $stockout_text ) .'</span>' : ($product->is_on_sale() ? '<span class="napae-onsale '.esc_attr( $sale_badge_preset ).' '.esc_attr( $sale_badge_align ).'">' . esc_html( $sale_text ) . '</span>' : '') );
 										}
 									?>
 									<?php if ( $settings['is_rating'] && $product->get_rating_count() ) { ?>
@@ -940,7 +940,7 @@ class Primary_Addon_Woo_Grid extends Widget_Base{
 								<div class="napae-woo-product-image" style="background-image: url(<?php echo esc_url($image_url); ?>);">
 									<?php
 										if($settings['is_label']) { 
-											echo ( ! $product->managing_stock() && ! $product->is_in_stock() ? '<span class="napae-onsale outofstock '.$sale_badge_preset.' '.$sale_badge_align.'">'. $stockout_text .'</span>' : ($product->is_on_sale() ? '<span class="napae-onsale '.$sale_badge_preset.' '.$sale_badge_align.'">' . $sale_text . '</span>' : '') );
+											echo ( ! $product->managing_stock() && ! $product->is_in_stock() ? '<span class="napae-onsale outofstock '.esc_attr( $sale_badge_preset ).' '.esc_attr( $sale_badge_align ).'">'. esc_html($stockout_text) .'</span>' : ($product->is_on_sale() ? '<span class="napae-onsale '.esc_attr( $sale_badge_preset ).' '.esc_attr( $sale_badge_align ).'">' . esc_html($sale_text) . '</span>' : '') );
 										}
 									?>
 								</div>

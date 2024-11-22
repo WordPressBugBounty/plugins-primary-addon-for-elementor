@@ -760,19 +760,19 @@ class Primary_Addon_Team extends Widget_Base{
 		              <div class="napae-social rounded">
 		                <ul>
 		                	<?php
-											// Group Param Output
-											if ( is_array( $listItems_groups ) && !empty( $listItems_groups ) ){
-											  foreach ( $listItems_groups as $each_list ) {
-											  $icon_link = !empty( $each_list['icon_link'] ) ? $each_list['icon_link'] : '';
-												$link_url = !empty( $icon_link['url'] ) ? esc_url($icon_link['url']) : '';
-												$link_external = !empty( $icon_link['is_external'] ) ? 'target="_blank"' : '';
-												$link_nofollow = !empty( $icon_link['nofollow'] ) ? 'rel="nofollow"' : '';
-												$link_attr = !empty( $icon_link['url'] ) ?  $link_external.' '.$link_nofollow : '';
-											  $social_icon = !empty( $each_list['social_icon'] ) ? $each_list['social_icon'] : '';
-												$icon = $social_icon ? '<i class="'.esc_attr($social_icon).'" aria-hidden="true"></i>' : '';
-									   		?>
-											  <li><a href="<?php echo esc_url($link_url); ?>" <?php echo $link_attr; ?>><?php echo $icon; ?></a></li>
-											<?php } } ?>
+								// Group Param Output
+								if ( is_array( $listItems_groups ) && !empty( $listItems_groups ) ){
+								  foreach ( $listItems_groups as $each_list ) {
+								  	$icon_link = !empty( $each_list['icon_link'] ) ? $each_list['icon_link'] : '';
+									$link_url = !empty( $icon_link['url'] ) ? esc_url($icon_link['url']) : '';
+									$link_external = !empty( $icon_link['is_external'] ) ? 'target="_blank"' : '';
+									$link_nofollow = !empty( $icon_link['nofollow'] ) ? 'rel="nofollow"' : '';
+									$link_attr = !empty( $icon_link['url'] ) ?  $link_external.' '.$link_nofollow : '';
+								  	$social_icon = !empty( $each_list['social_icon'] ) ? $each_list['social_icon'] : '';
+									$icon = $social_icon ? '<i class="'.esc_attr($social_icon).'" aria-hidden="true"></i>' : '';
+						   		?>
+								  <li><a href="<?php echo esc_url($link_url); ?>" <?php echo $link_attr; ?>><?php echo $icon; ?></a></li>
+								<?php } } ?>
 		                </ul>
 		              </div>
 		            </div>
@@ -844,7 +844,7 @@ class Primary_Addon_Team extends Widget_Base{
 								$link_attr = !empty( $contact_link['url'] ) ?  $link_external.' '.$link_nofollow : '';
 							  $contact_icon = !empty( $each_list['contact_icon'] ) ? $each_list['contact_icon'] : '';
 								$icon = $contact_icon ? '<i class="'.esc_attr($contact_icon).'" aria-hidden="true"></i>' : '';
-								$text = $link_url ? '<a href="'. esc_url($link_url).'" '. $link_attr.'>'.$contact_text.'</a>' : $contact_text;
+								$text = $link_url ? '<a href="'. esc_url($link_url).'" '. $link_attr.'>'.esc_html( $contact_text ).'</a>' : esc_html( $contact_text );
 					   		?>
 							  <li><?php echo $icon.' '.$text; ?></li>
 							<?php } } ?>

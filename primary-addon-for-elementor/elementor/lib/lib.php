@@ -22,7 +22,7 @@ if ( ! function_exists( 'prim_insert_elementor' ) ) {
 	  $response = Plugin::instance()->frontend->get_builder_content_for_display($post_id);
 	  return $response;
 	}
-	add_shortcode('prim_elementor_template','Elementor\prim_insert_elementor');
+	add_shortcode('prim_elementor_template', 'Elementor\prim_insert_elementor');
 }
 
 if ( !class_exists('NAPAE_Controls_Helper_Output') ){

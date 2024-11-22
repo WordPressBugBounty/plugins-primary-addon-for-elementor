@@ -287,38 +287,18 @@ class Primary_Addon_ImageCompare extends Widget_Base{
 		$after_title = $settings['after_title'] ? $settings['after_title'] : '';
 
 		$compare_id = uniqid();
-		$id = rand(999, 9999);
-
-	  $output = '<div class="napae-compare-wrap"><div class="napae-compare compare-'.esc_attr($compare_id).'-'.esc_attr($id).'"></div></div>';
-
-		echo $output; ?>
-
-		<script type="text/javascript">
-
-	    jQuery(document).ready(function($) {
-
-	    	slider = new juxtapose.JXSlider('.compare-<?php echo esc_attr($compare_id); ?>-<?php echo esc_attr($id); ?>',
-		    [
-	        {
-            src: '<?php echo esc_url($before_url); ?>',
-            label: '<?php echo esc_attr($before_title); ?>',
-	        },
-	        {
-            src: '<?php echo esc_url($after_url); ?>',
-            label: '<?php echo esc_attr($after_title); ?>',
-	        }
-		    ],
-		    {
-	        animate: true,
-	        showLabels: <?php echo esc_attr($title); ?>,
-	        showCredits: false,
-	        startingPosition: "<?php echo esc_attr($starting_position); ?>%",
-	        makeResponsive: true,
-	        mode: "<?php echo esc_attr($compare_style); ?>",
-		    });
-
-	    });
-	  </script>
+		$id = rand(999, 9999); ?>
+	    <div class="napae-compare-wrap">
+	        <div class="napae-compare <?php echo esc_attr($unique_class); ?>"
+	            data-before-url="<?php echo esc_url($before_url); ?>"
+	            data-before-title="<?php echo esc_attr($before_title); ?>"
+	            data-after-url="<?php echo esc_url($after_url); ?>"
+	            data-after-title="<?php echo esc_attr($after_title); ?>"
+	            data-show-labels="<?php echo esc_attr($title); ?>"
+	            data-starting-position="<?php echo esc_attr($starting_position); ?>"
+	            data-compare-style="<?php echo esc_attr($compare_style); ?>">
+	        </div>
+	    </div>
 	<?php
 	}
 
