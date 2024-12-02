@@ -6,7 +6,7 @@ Plugin URI: https://nicheaddons.com/demos/primary
 Description: Primary Addon for Elementor covers all the must-needed elements for creating a perfect websites using Elementor Page Builder. 20+ Common Elementor widget covers all of the Primary elements.
 Author: NicheAddons
 Author URI: https://nicheaddons.com/
-Version: 1.6.3
+Version: 1.6.4
 Text Domain: primary-addon-for-elementor
 */
 include_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -297,7 +297,7 @@ if ( !function_exists( 'prim_scripts_styles' ) ) {
         // Scripts
         wp_enqueue_script(
             'waypoints',
-            plugins_url( '/', __FILE__ ) . 'assets/js/jquery.waypoints.min.js',
+            plugins_url( '/', __FILE__ ) . 'assets/js/jquery.waypoints.js',
             array('jquery'),
             '2.0.3',
             true
