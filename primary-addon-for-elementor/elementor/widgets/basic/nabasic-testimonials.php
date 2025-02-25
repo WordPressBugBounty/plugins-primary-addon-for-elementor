@@ -44,7 +44,7 @@ class Primary_Addon_Testimonials extends Widget_Base{
 	 * Register Primary Addon for Elementor Testimonials widget controls.
 	 * Adds different input fields to allow the user to change and customize the widget settings.
 	*/
-	protected function _register_controls(){
+	protected function register_controls(){
 
 		$this->start_controls_section(
 			'section_testimonials',
@@ -1097,7 +1097,7 @@ class Primary_Addon_Testimonials extends Widget_Base{
 
 		$output = '<div class="napae-testimonials'.esc_attr( $style_cls ).'">';
 		if ($testimonial_style === 'two') { $output .= '<div class="napae-testimonial-item">'; }
-			$output .= '<div class="owl-carousel" data-items="'. esc_attr( $carousel_items ) .'" data-items-tablet="'. esc_attr( $carousel_items_tablet ) .'" data-items-mobile-landscape="'. esc_attr( $carousel_mobile ) .'" data-items-mobile-portrait="'. esc_attr( $carousel_small_mobile ) .'" data-margin="'. esc_attr( $carousel_margin ) .'" data-autoplay-timeout="'. esc_attr( $carousel_autoplay_timeout ) .'" data-loop="'. esc_attr( $carousel_loop ) .'" data-dots="'. esc_attr( $carousel_dots ) .'" data-nav="'. esc_attr( $carousel_nav ) .'" data-autoplay="'. esc_attr( $carousel_autoplay ) .'" data-animateout="'. esc_attr( $carousel_animate_out ) .'" data-mouse-drag="'. esc_attr( $carousel_mousedrag ) .'" data-auto-width="'. esc_attr( $carousel_autowidth ) .'" data-auto-height="'. esc_attr( $carousel_autoheight ) .'"';
+			$output .= '<div class="owl-carousel" data-items="'. esc_attr( $carousel_items ) .'" data-items-tablet="'. esc_attr( $carousel_items_tablet ) .'" data-items-mobile-landscape="'. esc_attr( $carousel_mobile ) .'" data-items-mobile-portrait="'. esc_attr( $carousel_small_mobile ) .'" data-margin="'. esc_attr( $carousel_margin ) .'" data-autoplay-timeout="'. esc_attr( $carousel_autoplay_timeout ) .'" data-loop="'. esc_attr( $carousel_loop ) .'" data-dots="'. esc_attr( $carousel_dots ) .'" data-nav="'. esc_attr( $carousel_nav ) .'" data-autoplay="'. esc_attr( $carousel_autoplay ) .'" data-animateout="'. esc_attr( $carousel_animate_out ) .'" data-mouse-drag="'. esc_attr( $carousel_mousedrag ) .'" data-auto-width="'. esc_attr( $carousel_autowidth ) .'" data-auto-height="'. esc_attr( $carousel_autoheight ) .'">';
 
 			if ( !empty( $testimonials_groups ) && is_array( $testimonials_groups ) ) {
 				// Group Param Output
