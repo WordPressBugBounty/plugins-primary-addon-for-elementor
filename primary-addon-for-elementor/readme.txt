@@ -6,7 +6,7 @@ Tags: primary, addon, elementor, unlimited, essential
 Requires PHP: 7.4
 Requires at least: 6.0
 Tested up to: 6.7.2
-Stable tag: 1.6.7
+Stable tag: 1.6.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,6 +126,9 @@ No, it'll not work without Elementor Page Builder, it's an addon for Elementor.
 7. Form Widget - PRO
 
 == Changelog ==
+
+= 1.6.8
+* Chart js updated
 
 = 1.6.7
 * Testimonial slider issue fix
